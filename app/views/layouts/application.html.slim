@@ -31,10 +31,10 @@ html lang="en"
           - else
             = link_to "Sign in", new_session_path, class: 'mdl-navigation__link'
             = link_to "Sign up", new_developer_path, class: 'mdl-navigation__link'
-          main#main.mdl-layout__content
-          .page-content
-          = yield
-          footer#footer.mdl-mini-footer
-          .mdl-mini-footer__left-section
-          .mdl-logo
-            | &copy; Dualboot Learn 2020
+    main#main.mdl-layout__content
+    .page-content
+    = yield
+    footer#footer.mdl-mini-footer
+    .mdl-mini-footer__left-section
+    .mdl-logo
+      | &copy; Dualboot Learn 2020
