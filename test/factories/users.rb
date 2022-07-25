@@ -7,13 +7,13 @@ FactoryBot.define do
     avatar
 
     factory :developer do
-      type { 'Developer' }
+      type { "Developer" }
     end
-    factory :admin do
-      type { 'Admin' }
-    end
+    # factory :admin do   // is it ok to comment out type? Will it know about admins.rb and work right with it?
+    #   type { 'Admin' }
+    # end
     factory :manager do
-      type { 'Manager' }
+      type { "Manager" }
     end
   end
 end
