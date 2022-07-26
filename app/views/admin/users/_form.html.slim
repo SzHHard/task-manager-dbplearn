@@ -1,4 +1,4 @@
-= simple_form_for @user, as: :user , url: admin_users_path do |f| # how to pass url as a local variable from render?
+= simple_form_for @user, as: :user, url: url do |f|
   p
     = f.input :first_name
     = f.input :last_name
