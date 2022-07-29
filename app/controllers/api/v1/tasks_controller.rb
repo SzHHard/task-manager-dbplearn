@@ -18,7 +18,6 @@ class Api::V1::TasksController < Api::V1::ApplicationController
   end
 
   def create
-    puts("task_params: ", task_params);  #todo remove
     task = current_user.my_tasks.new(task_params)
     task.save
 

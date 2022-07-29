@@ -19,17 +19,12 @@ class Api::V1::TasksControllerTest < ActionController::TestCase
     assignee = create :user
     task_attributes = attributes_for(:task)
       .merge({ assignee_id: assignee.id, author_id: author.id })
-    puts("\ntask attributes: ", task_attributes) #todo remove
+
     post :create, params: { task: task_attributes, format: :json }
     assert_response :created
 
     data = JSON.parse(response.body)
-    puts("\ndata: ", data)
     created_task = Task.find(data["task"]["id"])
-
-    puts("\ntask_attributes.stringify_keys: ", task_attributes.stringify_keys) #todo remove
-
-    puts("\ncreated_task all data: ", created_task.slice(*task_attributes.keys, :author, :assignee))
 
     assert created_task.present?
     assert_equal task_attributes.stringify_keys, created_task.slice(*task_attributes.keys)
